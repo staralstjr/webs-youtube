@@ -1,7 +1,8 @@
 import React from 'react';
+import Main from '../components/section/Main';
 
 const Not = () => {
-  return <div></div>;
+  return <Main>NOT</Main>;
 };
 
 export default Not;

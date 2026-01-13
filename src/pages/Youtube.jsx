@@ -1,7 +1,8 @@
 import React from 'react';
+import Main from '../components/section/Main';
 
 const Youtube = () => {
-  return <div></div>;
+  return <Main>Youtube</Main>;
 };
 
 export default Youtube;
