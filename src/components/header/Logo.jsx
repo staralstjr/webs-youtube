@@ -7,7 +7,7 @@ const Logo = () => {
         <a href="/">
           <img src={msIcon} aria-hidden="true"></img>
           <span>
-            webs
+            Minseok
             <br />
             youtube
           </span>
