@@ -2,17 +2,14 @@ import React from 'react';
 import Main from '../components/section/Main';
 import Today from '../components/contents/Today';
 import Developer from '../components/contents/Developer';
-import Webd from '../components/contents/Webd';
-import Website from '../components/contents/Website';
-import Gsap from '../components/contents/Gsap';
-import Portfolio from '../components/contents/Portfolio';
-import Youtube from '../components/contents/Youtube';
 import VideoSlider from '../components/videos/VideoSlider';
 import { webdText } from '../data/webd';
 import { websiteText } from '../data/website';
 import { gsapText } from '../data/gsap';
 import { portfolioText } from '../data/porfolio';
 import { youtubeText } from '../data/youtube';
+import { developerText } from '../data/developer';
+import { todayText } from '../data/today';
 
 const Home = () => {
   return (
@@ -20,8 +17,12 @@ const Home = () => {
       title="민석 유튜브"
       description="민석이 유튜브에 오신것을 환영합니다."
     >
-      <Today />
-      <Developer />
+      <Today videos={todayText} id="today" />
+      <Developer
+        videos={developerText}
+        title="😪 추천 개발자를 소개합니다."
+        id="developer"
+      />
       <VideoSlider
         videos={webdText}
         title="😮 웹디자인기능사 준비는 이걸로!"
