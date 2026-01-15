@@ -1,18 +1,17 @@
 import React from 'react';
 import msIcon from '../../assets/img/minseokIcon.png';
-const Logo = () => {
+import { Link } from 'react-router-dom';
+const Logo = ({ toggleMenu }) => {
   return (
     <h1 className="header__logo">
-      <h1 className="header__logo">
-        <a href="/">
-          <img src={msIcon} aria-hidden="true"></img>
-          <span>
-            Minseok
-            <br />
-            youtube
-          </span>
-        </a>
-      </h1>
+      <Link href="/">
+        <img src={msIcon} aria-hidden="true" onClick={toggleMenu}></img>
+        <span>
+          Minseok
+          <br />
+          youtube
+        </span>
+      </Link>
     </h1>
   );
 };

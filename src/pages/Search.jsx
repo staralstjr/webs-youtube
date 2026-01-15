@@ -8,10 +8,12 @@ const Search = () => {
   const { searchId } = useParams();
   const [videos, setVideos] = useState([]);
   const [nextPageToken, setNextPageToken] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setVideos([]);
     fetchVideos(searchId);
+    setLoading(false);
   }, [searchId]);
 
   const fetchVideos = (query, pageToken = '') => {
@@ -19,9 +21,11 @@ const Search = () => {
       .then((data) => {
         setNextPageToken(data.nextPageToken);
         setVideos((prevVideos) => [...prevVideos, ...data.items]);
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        setLoading(false);
       });
   };
 
@@ -31,9 +35,11 @@ const Search = () => {
     }
   };
 
+  const searchPageClass = loading ? 'isLoading' : 'isLoaded';
+
   return (
     <Main title="유튜브 검색" description="유튜브 검색 결과 페이지입니다.">
-      <section id="searchPage">
+      <section id="searchPage" className={searchPageClass}>
         <div className="video__inner search">
           <VideoSearch videos={videos} />
         </div>
